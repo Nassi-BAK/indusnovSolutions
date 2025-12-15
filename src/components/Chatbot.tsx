@@ -1,36 +1,122 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send } from 'lucide-react';
 
-interface Message {
-  id: number;
-  text: string;
-  isBot: boolean;
+// Définition des services
+interface ServiceItem {
+  id: string;
+  title: string;
+  definition: string;
+  shortDesc: string;
+  fullDesc: string;
+  objectives: string[];
+  benefits: string[];
+  features: string[];
 }
 
-// FAQ avec plus de détails pour Indusnov et Indusnov Solutions
-const faq = [
-  { keywords: ["bonjour", "salut", "hello"], answer: "Bonjour ! Je suis le chatbot d'Indusnov. Comment puis-je vous aider ?" },
-  { keywords: ["horaires", "ouvert", "fermé"], answer: "Nos horaires sont de 9h à 18h, du lundi au vendredi." },
-  { keywords: ["adresse", "lieu"], answer: "Nous sommes situés à Technopark, Casablanca, Maroc." },
-  { keywords: ["services", "service"], answer: "Nous offrons développement web, marketing digital, consulting, et solutions industrielles." },
-  { keywords: ["contact", "email", "téléphone"], answer: "Vous pouvez nous contacter au +212 661-185357 ou contact@indusnov.com" },
-  { keywords: ["indusnov"], answer: "Indusnov est une société spécialisée dans les solutions industrielles et le développement de projets innovants." },
-  { keywords: ["indusnov solution"], answer: "Indusnov Solutions propose des services dans l'industrie, l'automatisation, la transformation digitale et le marketing." },
-  { keywords: ["industriel", "industrie"], answer: "Nous proposons des solutions industrielles complètes: automatisation, consulting, gestion de projets et services techniques." },
+const services: ServiceItem[] = [
+  {
+    id: 'drontech',
+    title: 'DronTech',
+    definition: 'Inspection aérienne par drones pour vos installations industrielles.',
+    shortDesc: 'Inspection par drone.',
+    fullDesc: 'DronTech fournit des inspections complètes par drone pour vos installations industrielles et bâtiments. Les drones capturent des images haute résolution et fournissent des rapports détaillés pour faciliter la maintenance et la sécurité.',
+    objectives: ['Inspection rapide', 'Détection précoce des problèmes', 'Optimisation de la maintenance'],
+    benefits: ['Gain de temps', 'Réduction des coûts', 'Sécurité renforcée'],
+    features: ['Rapide', 'Précis', 'Sécurité améliorée'],
+  },
+  {
+    id: 'aquascope',
+    title: 'AquaScope',
+    definition: 'Inspection sous-marine pour infrastructures portuaires et aquatiques.',
+    shortDesc: 'Inspection sous-marine.',
+    fullDesc: 'AquaScope réalise des inspections sous-marines détaillées pour les infrastructures portuaires et installations aquatiques. Nos équipements permettent un contrôle précis même dans les zones difficiles d\'accès.',
+    objectives: ['Surveillance sous-marine', 'Détection de fuites ou corrosion', 'Maintenance proactive'],
+    benefits: ['Prévention des accidents', 'Optimisation des interventions', 'Rapports détaillés'],
+    features: ['Haute résolution', 'Adapté aux profondeurs', 'Rapport détaillé'],
+  },
+  {
+    id: 'ecoscan',
+    title: 'EcoScan',
+    definition: 'Audit énergétique pour entreprises et bâtiments.',
+    shortDesc: 'Audit énergétique.',
+    fullDesc: 'EcoScan propose des audits énergétiques pour entreprises et bâtiments. Nous analysons vos consommations, identifions les pertes et recommandons des solutions d\'optimisation énergétique.',
+    objectives: ['Réduction de consommation', 'Optimisation des installations', 'Amélioration de l\'efficacité'],
+    benefits: ['Économies d\'énergie', 'Impact environnemental réduit', 'Rapport détaillé avec recommandations'],
+    features: ['Économie d\'énergie', 'Analyse complète', 'Recommandations pratiques'],
+  },
+  {
+    id: 'predictech',
+    title: 'PredicTech',
+    definition: 'Maintenance prédictive grâce à capteurs et IA.',
+    shortDesc: 'Maintenance prédictive.',
+    fullDesc: 'PredicTech surveille vos machines et équipements industriels grâce à des capteurs intelligents et l\'IA pour prévenir toute panne ou défaillance. Les interventions sont planifiées avant tout incident.',
+    objectives: ['Surveillance continue', 'Prévention des pannes', 'Optimisation du cycle de vie des machines'],
+    benefits: ['Réduction des temps d\'arrêt', 'Efficacité accrue', 'Alertes automatiques'],
+    features: ['Prévention des pannes', 'Optimisation des performances', 'Alertes automatiques'],
+  },
+  {
+    id: 'skillnov',
+    title: 'SkilNov',
+    definition: 'Formation technique et certifications professionnelles.',
+    shortDesc: 'Formation technique.',
+    fullDesc: 'SkilNov offre des formations techniques et certifications professionnelles pour vos employés. Nos programmes sont adaptés aux besoins spécifiques de chaque secteur industriel.',
+    objectives: ['Formation pratique', 'Certification reconnue', 'Développement des compétences'],
+    benefits: ['Employés qualifiés', 'Amélioration de la productivité', 'Montée en compétence rapide'],
+    features: ['Formateurs experts', 'Cours pratiques', 'Certifications reconnues'],
+  },
+  {
+    id: 'smartflow',
+    title: 'SmartFlow',
+    definition: 'Optimisation des processus industriels grâce à l’automatisation.',
+    shortDesc: 'Automatisation industrielle.',
+    fullDesc: 'SmartFlow optimise vos processus industriels grâce à l\'automatisation intelligente. Nos solutions permettent de réduire les erreurs, améliorer la qualité et suivre les performances en temps réel.',
+    objectives: ['Automatisation des processus', 'Contrôle qualité', 'Suivi en temps réel'],
+    benefits: ['Efficacité accrue', 'Réduction des erreurs', 'Gain de temps'],
+    features: ['Efficacité accrue', 'Réduction des erreurs', 'Suivi en temps réel'],
+  },
 ];
 
+// Mapping des services pour le bot
+const serviceFAQ = services.map(s => ({
+  keywords: [s.title.toLowerCase(), s.shortDesc.toLowerCase(), s.id],
+  answer: `💡 ${s.title}:\nDéfinition: ${s.definition}\n\nDescription: ${s.fullDesc}\n🎯 Objectifs: ${s.objectives.join(', ')}\n✨ Avantages: ${s.benefits.join(', ')}\n⚡ Caractéristiques: ${s.features.join(', ')}`,
+}));
+
+// FAQ générale
+const generalFAQ = [
+  { keywords: ['bonjour', 'salut'], answer: 'Bonjour ! Je suis le chatbot d\'Indusnov. Posez-moi vos questions sur nos services.' },
+  { keywords: ['merci', 'ok'], answer: 'Avec plaisir ! Si vous voulez en savoir plus sur nos services, tapez le nom du service.' },
+];
+
+const getBotReply = (text: string) => {
+  const lowerText = text.toLowerCase();
+
+  for (const item of serviceFAQ) {
+    for (const keyword of item.keywords) {
+      if (lowerText.includes(keyword)) return item.answer;
+    }
+  }
+
+  for (const item of generalFAQ) {
+    for (const keyword of item.keywords) {
+      if (lowerText.includes(keyword)) return item.answer;
+    }
+  }
+
+  return "Désolé, je n'ai pas compris. Vous pouvez me poser une question sur nos services ou votre projet.";
+};
+
+// Composant Chatbot
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<{ id: number; text: string; isBot: boolean }[]>([]);
   const [inputValue, setInputValue] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages([
-        { id: Date.now(), text: "Bonjour ! Je suis le chatbot d'Indusnov. Comment puis-je vous aider ?", isBot: true }
-      ]);
+      setMessages([{ id: Date.now(), text: 'Bonjour ! Je suis le chatbot d\'Indusnov. Comment puis-je vous aider ?', isBot: true }]);
     }
   }, [isOpen, messages.length]);
 
@@ -38,39 +124,24 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const getBotReply = (text: string) => {
-    const lowerText = text.toLowerCase();
-    for (const item of faq) {
-      for (const keyword of item.keywords) {
-        if (lowerText.includes(keyword)) {
-          return item.answer;
-        }
-      }
-    }
-    return "Merci, nous avons reçu votre message !"; // réponse par défaut
-  };
-
   const handleSend = () => {
     if (!inputValue.trim()) return;
 
-    const userMessage: Message = { id: Date.now(), text: inputValue, isBot: false };
+    const userMessage = { id: Date.now(), text: inputValue, isBot: false };
     setMessages(prev => [...prev, userMessage]);
 
-    setTimeout(() => {
-      const botMessage: Message = { id: Date.now() + 1, text: getBotReply(inputValue), isBot: true };
-      setMessages(prev => [...prev, botMessage]);
-    }, 500);
-
+    const botReply = getBotReply(inputValue);
+    setMessages(prev => [...prev, { id: Date.now() + 1, text: botReply, isBot: true }]);
     setInputValue('');
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') handleSend();
   };
 
   return (
     <>
-      {/* Bouton toggle */}
+      {/* Bouton du chatbot */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -90,7 +161,7 @@ const Chatbot = () => {
         </AnimatePresence>
       </motion.button>
 
-      {/* Fenêtre de chat */}
+      {/* Fenêtre du chatbot */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
