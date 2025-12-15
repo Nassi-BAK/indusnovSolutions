@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "portfolio": "Réalisations",
+    "testimonials": "Témoignages",
+    "contact": "Contact"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Excellence Industrielle",
+        "subtitle": "Solutions innovantes de fabrication et d'ingénierie pour l'industrie moderne"
+      },
+      {
+        "title": "Précision & Performance",
+        "subtitle": "Technologies de pointe en soudage, usinage et automatisation"
+      },
+      {
+        "title": "Votre Partenaire Industriel",
+        "subtitle": "30 ans d'expertise au service de votre réussite"
+      }
+    ],
+    "cta": {
+      "services": "Nos Services",
+      "quote": "Demander un devis"
+    }
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions industrielles complètes pour tous vos besoins",
+    "items": [
+      {
+        "id": "welding",
+        "title": "Soudage Industriel",
+        "shortDesc": "Soudage TIG, MIG, et par points pour structures métalliques de haute qualité",
+        "fullDesc": "Notre expertise en soudage industriel couvre une large gamme de techniques incluant le soudage TIG, MIG, MAG et par points. Nous intervenons sur tous types de métaux : acier, inox, aluminium, et alliages spéciaux. Nos soudeurs certifiés garantissent des assemblages conformes aux normes les plus strictes.",
+        "features": ["Soudage TIG/MIG/MAG", "Soudage robotisé", "Contrôle qualité NDT", "Certifications ISO"]
+      },
+      {
+        "id": "machining",
+        "title": "Usinage CNC",
+        "shortDesc": "Usinage de précision sur centres CNC 3, 4 et 5 axes",
+        "fullDesc": "Nos centres d'usinage CNC de dernière génération permettent la fabrication de pièces complexes avec une précision au micron. Du prototypage à la grande série, nous maîtrisons le tournage, fraisage et électroérosion.",
+        "features": ["Usinage 5 axes", "Tournage CNC", "Fraisage haute vitesse", "Électroérosion"]
+      },
+      {
+        "id": "automation",
+        "title": "Automatisation",
+        "shortDesc": "Conception et intégration de systèmes automatisés et robotiques",
+        "fullDesc": "Nous concevons et intégrons des solutions d'automatisation industrielle sur mesure. De la robotisation de lignes de production à l'installation de systèmes de contrôle, nous optimisons vos processus pour plus d'efficacité.",
+        "features": ["Robotique industrielle", "Automates programmables", "Vision industrielle", "Systèmes SCADA"]
+      },
+      {
+        "id": "maintenance",
+        "title": "Maintenance Industrielle",
+        "shortDesc": "Maintenance préventive et curative de vos équipements",
+        "fullDesc": "Notre service de maintenance assure la disponibilité maximale de vos équipements. Nous intervenons en préventif comme en curatif, avec des contrats adaptés à vos besoins et une équipe disponible 24/7.",
+        "features": ["Maintenance préventive", "Interventions 24/7", "Pièces de rechange", "Contrats sur mesure"]
+      },
+      {
+        "id": "engineering",
+        "title": "Bureau d'Études",
+        "shortDesc": "Conception et études techniques avec CAO/DAO",
+        "fullDesc": "Notre bureau d'études accompagne vos projets de la conception à la réalisation. Nos ingénieurs utilisent les derniers logiciels de CAO pour concevoir des solutions innovantes et optimisées.",
+        "features": ["Conception 3D", "Calculs de structures", "Prototypage", "Plans d'exécution"]
+      },
+      {
+        "id": "construction",
+        "title": "Construction Métallique",
+        "shortDesc": "Fabrication de structures métalliques et charpentes",
+        "fullDesc": "Spécialistes de la construction métallique, nous réalisons tous types de structures : charpentes, escaliers, garde-corps, passerelles et bâtiments industriels. De la conception à la pose, nous garantissons qualité et délais.",
+        "features": ["Charpentes métalliques", "Escaliers sur mesure", "Garde-corps", "Structures industrielles"]
+      }
+    ],
+    "viewDetails": "En savoir plus",
+    "requestQuote": "Demander un devis"
+  },
+  "about": {
+    "title": "À Propos d'Indusnov",
+    "subtitle": "L'excellence industrielle depuis plus de 30 ans",
+    "description": "Fondée en 1993, Indusnov est devenue une référence dans le domaine de l'industrie métallique et mécanique. Notre engagement envers la qualité, l'innovation et la satisfaction client nous a permis de construire des partenariats durables avec les plus grands acteurs industriels.",
+    "mission": "Notre mission",
+    "missionText": "Fournir des solutions industrielles innovantes et durables qui dépassent les attentes de nos clients tout en contribuant au développement de l'industrie locale.",
+    "values": [
+      {
+        "icon": "Shield",
+        "title": "Qualité",
+        "description": "Certifications ISO 9001 et EN 1090"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Innovation",
+        "description": "R&D et technologies de pointe"
+      },
+      {
+        "icon": "Users",
+        "title": "Équipe",
+        "description": "150 experts passionnés"
+      },
+      {
+        "icon": "Award",
+        "title": "Excellence",
+        "description": "30 ans d'expérience reconnue"
+      }
+    ],
+    "stats": [
+      { "value": "30+", "label": "Années d'expérience" },
+      { "value": "500+", "label": "Projets réalisés" },
+      { "value": "150", "label": "Employés experts" },
+      { "value": "98%", "label": "Clients satisfaits" }
+    ]
+  },
+  "portfolio": {
+    "title": "Nos Réalisations",
+    "subtitle": "Découvrez quelques-uns de nos projets récents",
+    "filters": {
+      "all": "Tous",
+      "welding": "Soudage",
+      "machining": "Usinage",
+      "construction": "Construction",
+      "automation": "Automatisation"
+    },
+    "viewProject": "Voir le projet"
+  },
+  "testimonials": {
+    "title": "Témoignages",
+    "subtitle": "Ce que nos clients disent de nous",
+    "items": [
+      {
+        "name": "Pierre Dupont",
+        "company": "Aéronautique SA",
+        "text": "Indusnov a su répondre à nos exigences les plus strictes en matière de qualité et de délais. Leur expertise en usinage de précision est remarquable.",
+        "rating": 5
+      },
+      {
+        "name": "Marie Lambert",
+        "company": "Industrie Verte",
+        "text": "Un partenaire de confiance depuis 10 ans. Leur réactivité et leur professionnalisme font toute la différence dans nos projets.",
+        "rating": 5
+      },
+      {
+        "name": "Jean-Marc Petit",
+        "company": "Constructions Métalliques du Sud",
+        "text": "La qualité de leurs soudures et la précision de leur travail sont irréprochables. Je recommande vivement Indusnov.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes à votre écoute pour tous vos projets",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "service": "Service concerné",
+      "selectService": "Sélectionnez un service",
+      "message": "Votre message",
+      "submit": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi"
+    },
+    "info": {
+      "address": "Zone Industrielle, 75001 Paris, France",
+      "phone": "+33 1 23 45 67 89",
+      "email": "contact@indusnov.com",
+      "hours": "Lun - Ven: 8h00 - 18h00"
+    }
+  },
+  "footer": {
+    "description": "Votre partenaire industriel de confiance depuis plus de 30 ans. Expertise, qualité et innovation au service de votre réussite.",
+    "quickLinks": "Liens Rapides",
+    "ourServices": "Nos Services",
+    "contactUs": "Contact",
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de confidentialité",
+    "terms": "Mentions légales"
+  },
+  "chatbot": {
+    "greeting": "Bonjour ! Comment puis-je vous aider ?",
+    "placeholder": "Écrivez votre message...",
+    "defaultResponses": [
+      "Merci pour votre message ! Notre équipe vous répondra bientôt.",
+      "Pour un devis, veuillez utiliser notre formulaire de contact.",
+      "Nos bureaux sont ouverts du lundi au vendredi, 8h-18h."
+    ]
+  }
+}

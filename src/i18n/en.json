@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "slides": [
+      {
+        "title": "Industrial Excellence",
+        "subtitle": "Innovative manufacturing and engineering solutions for modern industry"
+      },
+      {
+        "title": "Precision & Performance",
+        "subtitle": "Cutting-edge welding, machining and automation technologies"
+      },
+      {
+        "title": "Your Industrial Partner",
+        "subtitle": "30 years of expertise at your service"
+      }
+    ],
+    "cta": {
+      "services": "Our Services",
+      "quote": "Request a Quote"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Complete industrial solutions for all your needs",
+    "items": [
+      {
+        "id": "welding",
+        "title": "Industrial Welding",
+        "shortDesc": "TIG, MIG, and spot welding for high-quality metal structures",
+        "fullDesc": "Our industrial welding expertise covers a wide range of techniques including TIG, MIG, MAG and spot welding. We work on all types of metals: steel, stainless steel, aluminum, and special alloys. Our certified welders guarantee assemblies that comply with the strictest standards.",
+        "features": ["TIG/MIG/MAG Welding", "Robotic Welding", "NDT Quality Control", "ISO Certifications"]
+      },
+      {
+        "id": "machining",
+        "title": "CNC Machining",
+        "shortDesc": "Precision machining on 3, 4 and 5-axis CNC centers",
+        "fullDesc": "Our latest generation CNC machining centers allow the manufacture of complex parts with micron precision. From prototyping to large series, we master turning, milling and EDM.",
+        "features": ["5-Axis Machining", "CNC Turning", "High-Speed Milling", "EDM"]
+      },
+      {
+        "id": "automation",
+        "title": "Automation",
+        "shortDesc": "Design and integration of automated and robotic systems",
+        "fullDesc": "We design and integrate custom industrial automation solutions. From robotizing production lines to installing control systems, we optimize your processes for greater efficiency.",
+        "features": ["Industrial Robotics", "PLCs", "Industrial Vision", "SCADA Systems"]
+      },
+      {
+        "id": "maintenance",
+        "title": "Industrial Maintenance",
+        "shortDesc": "Preventive and corrective maintenance of your equipment",
+        "fullDesc": "Our maintenance service ensures maximum availability of your equipment. We intervene preventively and curatively, with contracts adapted to your needs and a team available 24/7.",
+        "features": ["Preventive Maintenance", "24/7 Interventions", "Spare Parts", "Custom Contracts"]
+      },
+      {
+        "id": "engineering",
+        "title": "Engineering Office",
+        "shortDesc": "Design and technical studies with CAD/CAM",
+        "fullDesc": "Our engineering office supports your projects from design to completion. Our engineers use the latest CAD software to design innovative and optimized solutions.",
+        "features": ["3D Design", "Structural Calculations", "Prototyping", "Execution Plans"]
+      },
+      {
+        "id": "construction",
+        "title": "Metal Construction",
+        "shortDesc": "Manufacture of metal structures and frameworks",
+        "fullDesc": "Specialists in metal construction, we produce all types of structures: frameworks, stairs, railings, walkways and industrial buildings. From design to installation, we guarantee quality and deadlines.",
+        "features": ["Metal Frameworks", "Custom Stairs", "Railings", "Industrial Structures"]
+      }
+    ],
+    "viewDetails": "Learn More",
+    "requestQuote": "Request a Quote"
+  },
+  "about": {
+    "title": "About Indusnov",
+    "subtitle": "Industrial excellence for over 30 years",
+    "description": "Founded in 1993, Indusnov has become a benchmark in the metal and mechanical industry. Our commitment to quality, innovation and customer satisfaction has enabled us to build lasting partnerships with the largest industrial players.",
+    "mission": "Our Mission",
+    "missionText": "To provide innovative and sustainable industrial solutions that exceed our customers' expectations while contributing to the development of local industry.",
+    "values": [
+      {
+        "icon": "Shield",
+        "title": "Quality",
+        "description": "ISO 9001 and EN 1090 certified"
+      },
+      {
+        "icon": "Lightbulb",
+        "title": "Innovation",
+        "description": "R&D and cutting-edge technology"
+      },
+      {
+        "icon": "Users",
+        "title": "Team",
+        "description": "150 passionate experts"
+      },
+      {
+        "icon": "Award",
+        "title": "Excellence",
+        "description": "30 years of recognized experience"
+      }
+    ],
+    "stats": [
+      { "value": "30+", "label": "Years of Experience" },
+      { "value": "500+", "label": "Completed Projects" },
+      { "value": "150", "label": "Expert Employees" },
+      { "value": "98%", "label": "Satisfied Customers" }
+    ]
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Discover some of our recent projects",
+    "filters": {
+      "all": "All",
+      "welding": "Welding",
+      "machining": "Machining",
+      "construction": "Construction",
+      "automation": "Automation"
+    },
+    "viewProject": "View Project"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What our clients say about us",
+    "items": [
+      {
+        "name": "Pierre Dupont",
+        "company": "Aeronautics SA",
+        "text": "Indusnov met our strictest quality and deadline requirements. Their expertise in precision machining is remarkable.",
+        "rating": 5
+      },
+      {
+        "name": "Marie Lambert",
+        "company": "Green Industry",
+        "text": "A trusted partner for 10 years. Their responsiveness and professionalism make all the difference in our projects.",
+        "rating": 5
+      },
+      {
+        "name": "Jean-Marc Petit",
+        "company": "Southern Metal Constructions",
+        "text": "The quality of their welds and the precision of their work are impeccable. I highly recommend Indusnov.",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here for all your projects",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "service": "Service Needed",
+      "selectService": "Select a service",
+      "message": "Your Message",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "info": {
+      "address": "Industrial Zone, 75001 Paris, France",
+      "phone": "+33 1 23 45 67 89",
+      "email": "contact@indusnov.com",
+      "hours": "Mon - Fri: 8:00 AM - 6:00 PM"
+    }
+  },
+  "footer": {
+    "description": "Your trusted industrial partner for over 30 years. Expertise, quality and innovation at the service of your success.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "chatbot": {
+    "greeting": "Hello! How can I help you?",
+    "placeholder": "Type your message...",
+    "defaultResponses": [
+      "Thank you for your message! Our team will respond soon.",
+      "For a quote, please use our contact form.",
+      "Our offices are open Monday to Friday, 8am-6pm."
+    ]
+  }
+}
