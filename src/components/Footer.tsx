@@ -76,9 +76,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.slice(0, 5).map((service) => (
                 <li key={service.id}>
-                 
+                  <span className="text-primary-foreground/70 transition-colors hover:text-primary cursor-pointer">
                     {service.title}
-                 
+                  </span>
                 </li>
               ))}
             </ul>
@@ -92,7 +92,7 @@ const Footer = () => {
             <ul className="space-y-3 text-primary-foreground/70">
               <li>Technopark,Casablanca, Morocco</li>
               <li>+212 661-185357</li>
-              <li>05 22 75 07 07</li>
+              <li>+212 522-750707</li>
               <li>contact@indusnov.com</li>
               <li>{t('contact.info.hours')}</li>
             </ul>

@@ -24,7 +24,7 @@
     ],
     "cta": {
       "services": "Nos Services",
-      "quote": "Demander un devis"
+      "quote": "Contactez-nous"
     }
   },
   "services": {
@@ -33,42 +33,42 @@
     "items": [
       {
         "id": "welding",
-        "title": "Soudage Industriel",
+        "title": "DronTech",
         "shortDesc": "Soudage TIG, MIG, et par points pour structures métalliques de haute qualité",
         "fullDesc": "Notre expertise en soudage industriel couvre une large gamme de techniques incluant le soudage TIG, MIG, MAG et par points. Nous intervenons sur tous types de métaux : acier, inox, aluminium, et alliages spéciaux. Nos soudeurs certifiés garantissent des assemblages conformes aux normes les plus strictes.",
         "features": ["Soudage TIG/MIG/MAG", "Soudage robotisé", "Contrôle qualité NDT", "Certifications ISO"]
       },
       {
         "id": "machining",
-        "title": "Usinage CNC",
+        "title": "AquaScope",
         "shortDesc": "Usinage de précision sur centres CNC 3, 4 et 5 axes",
         "fullDesc": "Nos centres d'usinage CNC de dernière génération permettent la fabrication de pièces complexes avec une précision au micron. Du prototypage à la grande série, nous maîtrisons le tournage, fraisage et électroérosion.",
         "features": ["Usinage 5 axes", "Tournage CNC", "Fraisage haute vitesse", "Électroérosion"]
       },
       {
         "id": "automation",
-        "title": "Automatisation",
+        "title": "EcoScan",
         "shortDesc": "Conception et intégration de systèmes automatisés et robotiques",
         "fullDesc": "Nous concevons et intégrons des solutions d'automatisation industrielle sur mesure. De la robotisation de lignes de production à l'installation de systèmes de contrôle, nous optimisons vos processus pour plus d'efficacité.",
         "features": ["Robotique industrielle", "Automates programmables", "Vision industrielle", "Systèmes SCADA"]
       },
       {
         "id": "maintenance",
-        "title": "Maintenance Industrielle",
+        "title": "PredicTech",
         "shortDesc": "Maintenance préventive et curative de vos équipements",
         "fullDesc": "Notre service de maintenance assure la disponibilité maximale de vos équipements. Nous intervenons en préventif comme en curatif, avec des contrats adaptés à vos besoins et une équipe disponible 24/7.",
         "features": ["Maintenance préventive", "Interventions 24/7", "Pièces de rechange", "Contrats sur mesure"]
       },
       {
         "id": "engineering",
-        "title": "Bureau d'Études",
+        "title": "skillnov",
         "shortDesc": "Conception et études techniques avec CAO/DAO",
         "fullDesc": "Notre bureau d'études accompagne vos projets de la conception à la réalisation. Nos ingénieurs utilisent les derniers logiciels de CAO pour concevoir des solutions innovantes et optimisées.",
         "features": ["Conception 3D", "Calculs de structures", "Prototypage", "Plans d'exécution"]
       },
       {
         "id": "construction",
-        "title": "Construction Métallique",
+        "title": "SmartFlow",
         "shortDesc": "Fabrication de structures métalliques et charpentes",
         "fullDesc": "Spécialistes de la construction métallique, nous réalisons tous types de structures : charpentes, escaliers, garde-corps, passerelles et bâtiments industriels. De la conception à la pose, nous garantissons qualité et délais.",
         "features": ["Charpentes métalliques", "Escaliers sur mesure", "Garde-corps", "Structures industrielles"]

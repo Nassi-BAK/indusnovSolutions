@@ -70,7 +70,7 @@ const ContactSection = () => {
   const contactInfo = [
     { icon: MapPin, label: 'Technopark, Casablanca, Morocco' },
     { icon: Phone, label: '+212 661-185357' },
-    { icon: Phone, label: '05 22 75 07 07' },
+    { icon: Phone, label: '+212 522-750707' },
     { icon: Mail, label: 'contact@indusnov.com' },
     { icon: Clock, label: t('contact.info.hours') },
   ];
