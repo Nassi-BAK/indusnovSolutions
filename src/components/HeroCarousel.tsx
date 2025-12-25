@@ -1,9 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
 import hero1 from '@/assets/hero-1.jpg';
 import hero2 from '@/assets/hero-2.jpg';
 import hero3 from '@/assets/hero-3.jpg';
@@ -17,7 +14,6 @@ const slides = [
 		title: 'Inspection technique & maintenance prédictive 4.0',
 		subtitle: 'Drones, ROV & IoT pour sécuriser, optimiser et décarboner vos actifs industriels',
 		ctaText: 'Découvrir nos solutions',
-		ctaLink: '/#services',
 	},
 	{
 		id: 2,
@@ -25,7 +21,6 @@ const slides = [
 		title: "Voir l'invisible. Inspecter l'inaccessible.",
 		subtitle: 'Inspections par drones thermographiques & ROV : ports, énergie, lignes HT, silos, pipelines, offshore',
 		ctaText: 'Voir les cas d\'usage',
-		ctaLink: '/#use-cases',
 	},
 	{
 		id: 3,
@@ -33,7 +28,6 @@ const slides = [
 		title: 'Anticipez les pannes. Réduisez les coûts.',
 		subtitle: 'Maintenance prédictive, vibration, thermographie & IoT avec des partenaires technologiques internationaux',
 		ctaText: 'Parler à un expert',
-		ctaLink: '/#contact',
 	},
 	{
 		id: 4,
@@ -41,7 +35,6 @@ const slides = [
 		title: 'Performance énergétique & industrie durable',
 		subtitle: 'Audits énergétiques, détection de fuites, efficacité énergétique & conformité ESG',
 		ctaText: 'Optimiser ma consommation',
-		ctaLink: '/#energy',
 	},
 	{
 		id: 5,
@@ -49,12 +42,10 @@ const slides = [
 		title: 'Ils nous font confiance',
 		subtitle: 'Synox · APEBI · CDD · Technopark · partenaires technologiques',
 		ctaText: 'Nous contacter',
-		ctaLink: '/#contact',
 	},
 ];
 
 const HeroCarousel = () => {
-	const { t } = useTranslation();
 	const [currentSlide, setCurrentSlide] = useState(0);
 
 	const nextSlide = useCallback(() => {
@@ -71,119 +62,109 @@ const HeroCarousel = () => {
 	}, [nextSlide]);
 
 	const currentSlideData = slides[currentSlide];
-	const isExternalLink = currentSlideData.ctaLink.startsWith('http');
 
 	return (
-		<section className="relative h-screen w-full overflow-hidden">
-			<AnimatePresence mode="wait">
-				<motion.div
-					key={currentSlide}
-					initial={{ opacity: 0, scale: 1.1 }}
-					animate={{ opacity: 1, scale: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 0.8 }}
-					className="absolute inset-0"
-				>
-					<div
-						className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-						style={{ backgroundImage: `url(${currentSlideData.image})` }}
-					/>
-					<div className="industrial-overlay" />
-				</motion.div>
-			</AnimatePresence>
-
-			{/* Content */}
-			<div className="relative z-10 flex h-full items-center">
-				<div className="section-container w-full">
-					<AnimatePresence mode="wait">
-						<motion.div
-							key={currentSlide}
-							initial={{ opacity: 0, y: 30 }}
-							animate={{ opacity: 1, y: 0 }}
-							exit={{ opacity: 0, y: -30 }}
-							transition={{ duration: 0.6 }}
-							className="max-w-3xl"
-						>
+		<section className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950">
+			<div className="container mx-auto px-4 py-12">
+				<div className="grid min-h-screen items-center gap-8 lg:grid-cols-2 lg:gap-12">
+					{/* Contenu Texte - Gauche */}
+					<div className="relative z-10 flex items-center">
+						<AnimatePresence mode="wait">
 							<motion.div
-								initial={{ width: 0 }}
-								animate={{ width: 80 }}
-								transition={{ duration: 0.5, delay: 0.2 }}
-								className="mb-6 h-1 bg-primary"
-							/>
-							<h1 className="mb-6 font-heading text-5xl font-bold uppercase tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
-								{currentSlideData.title}
-							</h1>
-							<p className="mb-8 text-lg text-primary-foreground/90 md:text-xl lg:text-2xl">
-								{currentSlideData.subtitle}
-							</p>
-							<div className="flex flex-wrap gap-4">
-								{isExternalLink ? (
-									<a href={currentSlideData.ctaLink} className="btn-primary">
-										{currentSlideData.ctaText}
-									</a>
-								) : currentSlideData.ctaLink.startsWith('#') ? (
-									<ScrollLink
-										to={currentSlideData.ctaLink.slice(1)}
-										smooth
-										duration={500}
-										className="btn-primary cursor-pointer"
-									>
-										{currentSlideData.ctaText}
-									</ScrollLink>
-								) : (
-									<Link to={currentSlideData.ctaLink} className="btn-primary">
-										{currentSlideData.ctaText}
-									</Link>
-								)}
-							</div>
-						</motion.div>
-					</AnimatePresence>
+								key={currentSlide}
+								initial={{ opacity: 0, x: -50 }}
+								animate={{ opacity: 1, x: 0 }}
+								exit={{ opacity: 0, x: 50 }}
+								transition={{ duration: 0.6 }}
+								className="w-full"
+							>
+								<motion.div
+									initial={{ width: 0 }}
+									animate={{ width: 80 }}
+									transition={{ duration: 0.5, delay: 0.2 }}
+									className="mb-6 h-1 bg-orange-500"
+								/>
+								<h1 className="mb-6 text-4xl font-bold uppercase tracking-tight text-white md:text-5xl lg:text-6xl">
+									{currentSlideData.title}
+								</h1>
+								<p className="mb-8 text-lg text-blue-100 md:text-xl">
+									{currentSlideData.subtitle}
+								</p>
+								<button className="rounded-lg bg-orange-500 px-8 py-4 font-semibold text-white transition-all hover:bg-orange-600 hover:shadow-lg">
+									{currentSlideData.ctaText}
+								</button>
+							</motion.div>
+						</AnimatePresence>
+					</div>
+
+					{/* Image - Droite */}
+					<div className="relative flex items-center justify-center">
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={currentSlide}
+								initial={{ opacity: 0, scale: 0.9 }}
+								animate={{ opacity: 1, scale: 1 }}
+								exit={{ opacity: 0, scale: 0.9 }}
+								transition={{ duration: 0.6 }}
+								className="relative w-full"
+							>
+								<div className="relative overflow-hidden rounded-2xl shadow-2xl">
+									<img
+										src={currentSlideData.image}
+										alt={currentSlideData.title}
+										className="h-[500px] w-full object-cover lg:h-[600px]"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent" />
+								</div>
+							</motion.div>
+						</AnimatePresence>
+
+						{/* Navigation Arrows sur l'image */}
+						<button
+							onClick={prevSlide}
+							className="absolute left-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 backdrop-blur-sm transition-all hover:bg-orange-500"
+							aria-label="Diapositive précédente"
+						>
+							<ChevronLeft className="h-6 w-6 text-white" />
+						</button>
+						<button
+							onClick={nextSlide}
+							className="absolute right-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-white/20 p-3 backdrop-blur-sm transition-all hover:bg-orange-500"
+							aria-label="Diapositive suivante"
+						>
+							<ChevronRight className="h-6 w-6 text-white" />
+						</button>
+					</div>
+				</div>
+
+				{/* Indicateurs de slides */}
+				<div className="flex justify-center gap-3 py-8">
+					{slides.map((_, index) => (
+						<button
+							key={index}
+							onClick={() => setCurrentSlide(index)}
+							className={`h-2 rounded-full transition-all duration-300 ${
+								index === currentSlide
+									? 'w-10 bg-orange-500'
+									: 'w-2 bg-white/50 hover:bg-white'
+							}`}
+							aria-label={`Aller à la diapositive ${index + 1}`}
+						/>
+					))}
 				</div>
 			</div>
 
-			{/* Navigation Arrows */}
-			<button
-				onClick={prevSlide}
-				className="absolute start-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-primary-foreground/10 p-3 backdrop-blur-sm transition-all hover:bg-primary hover:text-primary-foreground"
-				aria-label="Previous slide"
-			>
-				<ChevronLeft className="h-6 w-6 text-primary-foreground" />
-			</button>
-			<button
-				onClick={nextSlide}
-				className="absolute end-4 top-1/2 z-20 -translate-y-1/2 rounded-full bg-primary-foreground/10 p-3 backdrop-blur-sm transition-all hover:bg-primary hover:text-primary-foreground"
-				aria-label="Next slide"
-			>
-				<ChevronRight className="h-6 w-6 text-primary-foreground" />
-			</button>
-
-			{/* Slide Indicators */}
-			<div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 gap-3">
-				{slides.map((_, index) => (
-					<button
-						key={index}
-						onClick={() => setCurrentSlide(index)}
-						className={`h-2 rounded-full transition-all duration-300 ${
-							index === currentSlide
-								? 'w-10 bg-primary'
-								: 'w-2 bg-primary-foreground/50 hover:bg-primary-foreground'
-						}`}
-						aria-label={`Go to slide ${index + 1}`}
-					/>
-				))}
-			</div>
-
-			{/* Scroll Indicator */}
+			{/* Indicateur de défilement */}
 			<motion.div
 				animate={{ y: [0, 10, 0] }}
 				transition={{ duration: 1.5, repeat: Infinity }}
-				className="absolute bottom-24 left-1/2 z-20 -translate-x-1/2"
+				className="absolute bottom-8 left-1/2 z-20 -translate-x-1/2"
 			>
-				<div className="h-12 w-6 rounded-full border-2 border-primary-foreground/50 p-1">
+				<div className="h-12 w-6 rounded-full border-2 border-white/50 p-1">
 					<motion.div
 						animate={{ y: [0, 16, 0] }}
 						transition={{ duration: 1.5, repeat: Infinity }}
-						className="h-2 w-2 rounded-full bg-primary"
+						className="h-2 w-2 rounded-full bg-orange-500"
 					/>
 				</div>
 			</motion.div>
